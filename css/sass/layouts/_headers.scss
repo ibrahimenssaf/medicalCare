@@ -1,0 +1,83 @@
+*{
+    @include prefixes(box-sizing, border-box, webkit moz);
+
+}
+
+.mini-header {
+    z-index: 1;
+    margin: 0;
+    font-family: $globalfonts;
+    background-color: $grayColor;
+    color: $blueColor;
+    padding-top: 10px;
+    position: relative;
+
+    &:hover .ul-menu {
+        display: flex;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        flex-direction: row;
+        .logo {
+            h1{
+                margin: 0;
+            }
+
+           
+        }
+
+        .dropdown {
+            width: 40px;
+            position: relative;
+
+        }
+    }
+
+    
+}
+
+
+.header {
+    @include prefixes(background-image, url(/imgs/slider.jpg), webkit moz );
+    @include prefixes(background-size, cover, webkit moz);
+    height: calc(100vh - 50px);
+    position: relative;
+    z-index: 0;
+
+    .overlay {
+        @include overlay;
+        transition: all .5s;
+
+        &:hover {
+            background-color: transparent;
+        
+        }
+    }
+
+    .container {
+        height: 100%;
+        display: flex;
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: $globalfonts;
+            color: $blueColor;
+            font-size: 30px;
+            h2, p{
+
+                background-color: $grayColor;
+                width: fit-content;
+                padding: 10px 20px;
+            }
+
+            p {
+
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,22 @@
+
+
+.container {
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+
+    @media #{$minSmall} {
+        width: 750px;
+    }
+
+    @media #{$minMedium} {
+        width: 950px;
+    }
+
+    @media #{$minLarge} {
+        width: 1170px;
+    }
+}

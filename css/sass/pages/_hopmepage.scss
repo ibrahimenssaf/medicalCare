@@ -1,0 +1,253 @@
+
+@import 'sass/helpers/variables';
+@import 'sass/helpers/mixins';
+@import 'sass/components/dropspans';
+@import 'sass/components/menu';
+@import 'sass/components/headings';
+@import 'sass/layouts/headers';
+@import 'sass/layouts/gridsystem';
+@import 'sass/layouts/footer';
+
+
+
+// Start Intro Style :
+
+.intro {
+
+    padding: 40px 0;
+    .container {
+        display: grid;
+        grid-gap: 20px;
+
+        @media #{$maxMobile} {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+       @media #{$minSmall} {           
+           grid-template-columns: repeat(1, 1fr);
+           grid-template-rows: repeat(3, 1fr);
+       }
+
+       @media #{$minMedium} {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+
+       }
+        .intro-box {
+            padding: 20px 10px;
+
+           
+
+            .fas {
+                display: block;
+                font-size: 35px;
+                text-align: center;
+                color: $grayColor;
+            }
+
+            h3 {
+                text-align: center;
+                color: $blueColor;
+                font-family: $globalfonts;
+            }
+
+            p {
+                text-align: justify;
+                line-height: 1.8;
+                position: relative;
+                padding: 0 10px;
+
+                &::after {
+                    content: ' ';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    width: 2px;
+                    background-color: $blueColor;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+// Start Services Style :
+
+.services {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, auto );
+        grid-template-rows: repeat(3, auto );
+
+        @media #{$maxMobile} {
+            grid-template-columns: repeat(1, auto );
+            grid-template-rows: repeat(3, auto );
+       
+        }
+
+        @media #{$minSmall} {
+            display: flex;
+            flex-direction: column;
+        }
+        @media #{$minMedium} {
+            display: grid;
+        }
+
+        .head-scetion{
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+
+            @media #{$maxMobile} {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+        }
+
+        .section-parent1, .section-parent2, .section-parent3{
+            padding: 10px;
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            color: rgba($grayColor, .5);
+            line-height: 1.6;
+
+            
+            h3{
+                color: $grayColor;
+                font-family: $globalfonts;
+
+                i{
+                    color: $blueColor;
+                    font-size: 30px;
+                    padding-right: 10px;                    
+                }
+            }
+        }
+        .section-parent1{
+            .section-child{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 3;
+
+                
+                 }
+        }
+
+        .section-parent2{
+            .section-child{
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+
+        }
+        .section-parent3{
+
+            .section-child{
+                grid-column-start: 3;
+                grid-column-end: 4;
+                grid-row-start: 2;
+                grid-row-end: 3;
+
+
+                img {
+                    padding: 10px;
+
+                    @media #{$maxMobile} {
+                        width: 100%;
+                        margin: 0 auto;
+                    }
+
+                    @media #{$minSmall} {
+                        width: 100%;
+                    }
+                }
+               
+            }
+        }
+      
+    }
+}
+
+
+
+
+.reservation {
+    display: grid;
+
+    @media #{$maxMobile} {    
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media #{$minMedium} {
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+    .reserv-form{
+        @include overlay;
+        @include prefixes(background-size, cover, webkit);
+        @include prefixes(background-repeat, no-repeat, webkit);
+        background-image: url(/imgs/reservation-form.jpg);
+        position: relative;
+      
+        form {
+            padding: 30px;
+            display: grid;    
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-gap: 40px 20px;
+
+            input, textarea{
+                padding: 10px;
+                background-color: transparent;
+                color: $grayColor;
+                border: 1px solid $grayColor;
+                outline: none;
+            }
+            textarea {
+              grid-column-start: 1;
+              grid-column-end: 3;
+              grid-row-start: 3;
+              grid-row-end: 5;  
+            }
+
+            input[type='submit'] {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                background-color: $blueColor;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .reserv-text{
+        background-color: $blueColor;
+        padding: 20px 40px;
+        color: $grayColor;
+        text-transform: uppercase;
+        font-family: $globalfonts;
+
+        p {
+            line-height: 1.7;
+            text-align: justify;
+            padding-top: 10px;
+            &:nth-child(2) {
+                padding-bottom: 50px;
+            }
+        }
+    }
+}

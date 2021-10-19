@@ -1,0 +1,26 @@
+.footer{
+    padding: 20px 10px;
+    background-color: $grayColor;
+    color: $blueColor;
+    font-family: $globalfonts;
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: center;
+
+        @media #{$maxMobile} {
+            flex-direction: column;
+            justify-content: center;
+        }
+        @media #{$minMedium} {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        div {
+            width: fit-content;
+            text-align: center;
+        }
+    }
+}
